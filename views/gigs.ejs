@@ -1,0 +1,29 @@
+<%- include("./partial/header") %>
+    <section id="gigs" style="margin-top: 100px;" class="container">
+        <h1>All Gigs</h1>
+        <% gigs.forEach(gig => {%>
+            <div class="gig">
+                <h3>
+                    <%= gig.title %>
+                </h3>
+                <p>
+                    <%= gig.description %>
+                </p>
+                <ul>
+                    <li>Budget:
+                        <%= gig.budget %>
+                    </li>
+                    <li><a href="#" class="btn btn-reverse">Apply Now</a></li>
+                </ul>
+                <div class="tech">
+                    <small>Technologies Needed: <span><%= gig.technologies %></span></small>
+                </div>
+            </div>
+            <%});%>
+                <% if(gigs.length === 0){%>
+                    <h4>No gigs available,
+                        <a style="color: teal;" href="/gigs/add">Add a gig!</a>
+                    </h4>
+                    <%} %>
+    </section>
+    <%- include("./partial/footer") %>
